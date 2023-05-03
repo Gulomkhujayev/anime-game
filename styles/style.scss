@@ -1,0 +1,89 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  height: 95vh;
+}
+.container {
+  width: 1400px;
+  height: 400px;
+  background: #3737375b;
+  display: flex;
+  //   justify-content: space-evenly;
+  align-items: center;
+  .box {
+    display: grid;
+    grid-template-areas:
+      "box1 box2"
+      "box1 box3";
+    width: 100px;
+    height: 100px;
+    margin-left: 50px;
+    .box1 {
+      width: 50px;
+      height: 100px;
+      border-radius: 100px 0 0 100px;
+      background: #dcad11;
+      grid-area: box1;
+    }
+    .box2 {
+      width: 50px;
+      height: 50px;
+      border-radius: 0 100px 0 0;
+      background: #dcad11;
+      grid-area: box2;
+      animation: box2 .5s linear infinite;
+    //   transform: rotate(-45deg) translateX(-10px) translateY(-25px);
+        
+
+    }
+    .box3 {
+      width: 50px;
+      height: 50px;
+      border-radius: 0 0 100px 0;
+      background: #dcad11;
+      grid-area: box3;
+      animation: box3 .5s linear infinite;
+
+    //   transform: rotate(45deg) translateX(-10px) translateY(25px);
+    }
+  }
+
+  .childs {
+    display: flex;
+    gap: 130px;
+    .child {
+      width: 30px;
+      height: 30px;
+      background: #ffffff;
+      border-radius: 100px;
+      animation: child .3s infinite linear reverse;
+    }
+  }
+}
+
+@keyframes child {
+  0% {
+    transform: translate(-50px);
+    transition: 1s;
+  }
+}
+@keyframes box2 {
+    0% {
+        transform: rotate(-45deg) translateX(-10px) translateY(-25px);
+        transition: .5s;
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes box3 {
+    0%{
+        transform: rotate(45deg) translateX(-10px) translateY(25px);
+        transition: .5s;
+    }
+    100% {
+        transform: rotate(0px);
+    }
+}
